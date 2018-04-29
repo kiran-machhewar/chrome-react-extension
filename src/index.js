@@ -18,6 +18,10 @@ app.id = 'root';
 // Prepend the App to the viewport element in production if it exists on the page. 
 // You could also use `appendChild` depending on your needs.
 if (viewport) viewport.prepend(app);
+if(document.getElementById('root')){
+    ReactDOM.render(<App />, document.getElementById('root'));
+}else if(document.getElementById('container')){
+    ReactDOM.render(<App />, document.getElementById('container'));
+}
 
-ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
